@@ -1,10 +1,9 @@
-
 package arraylistsistemainventariodinamico;
 import java.util.Scanner;
 import java.util.ArrayList;
 
 
-public class ArrayListSistemaInventarioDinamico {
+public class InventarioProductos {
     
     public static Scanner sc;
     public static ArrayList<String> ListaProductos = new ArrayList <> ();
@@ -34,12 +33,20 @@ public class ArrayListSistemaInventarioDinamico {
        System.out.println("Seleciione una opcio de menu:");
        opcion = sc.nextInt();
        
-       System.out.println("**********");
+       System.out.println("**************************");
        switch(opcion){
-           case 1 -> verProductos();
-           case 2 -> agregarProducto();
-           case 3 -> opcionEditar();
-           case 4 -> System.out.println("Eliminando Producto...");
+           case 1:
+               verProductos();
+               break;
+           case 2:
+               agregarProducto();
+               break;
+           case 3:
+               editarProducto();
+               break;
+           case 4:
+                eliminarProducto();
+               break;
        
        }
        
@@ -49,7 +56,7 @@ public class ArrayListSistemaInventarioDinamico {
     }
     
     public static void verProductos(){
-         System.out.println("*******");
+         System.out.println("*********************");
            System.out.println("---Lista de Productos---");
         for(int i=0 ; i <ListaProductos.size(); i ++){
            System.out.println(ListaProductos.get(i));
@@ -73,25 +80,27 @@ public class ArrayListSistemaInventarioDinamico {
     public static void editarProducto(){
         System.out.println("De esta lista de productos cual desea modificar");
         for(int i=0; i<ListaProductos.size(); i++){
-            System.out.println(""+i+"->"+ListaProductos.get(i));
-            
+           System.out.println (""+i+"->"+ListaProductos.get(i)); 
+           
         
         }
-        System.out.println("Elija una de las opciones a editar");
-        int opcionEditar =sc.nextInt();
-        System.out.println("¿Con qué nombre desea reemplazarlo?");
+        System.out.println("Elija una de las opciones a editar: ");
+        int opcionEditar = sc.nextInt();
+        sc.nextLine();
+        System.out.println("con que nombre desea remplazarlo? ");
         String nuevoNombre = sc.nextLine();
         ListaProductos.set(opcionEditar, nuevoNombre);
-        
-               
-               
-    
+       sc.nextLine();
     }
     public static void eliminarProducto(){
-    
-    }
-
-    private static void opcionEditar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+     System.out.println("cual desea eliminar");
+     for(int i=0; i<ListaProductos.size(); i++){
+         System.out.println(""+i+ " -> " + ListaProductos.get(i));
+      }
+    System.out.println("Elija una opción a eliminar: ");
+    int opcionEliminar = sc.nextInt();
+    ListaProductos.remove(opcionEliminar);
+    System.out.println("Eliminado correctamente");
+           
     }
 }
