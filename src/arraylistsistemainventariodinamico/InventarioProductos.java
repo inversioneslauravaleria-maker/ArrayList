@@ -45,7 +45,7 @@ public class InventarioProductos {
                editarProducto();
                break;
            case 4:
-                eliminarProducto();
+               eliminarProducto();
                break;
        
        }
@@ -58,10 +58,10 @@ public class InventarioProductos {
     public static void verProductos(){
          System.out.println("*********************");
            System.out.println("---Lista de Productos---");
-        for(int i=0 ; i <ListaProductos.size(); i ++){
-           System.out.println(ListaProductos.get(i));
-        
-       }
+         for(int i=0 ; i <ListaProductos.size(); i ++){
+            System.out.println(ListaProductos.get(i));
+         
+        }
     
     }
     public static void agregarProducto(){
@@ -90,7 +90,7 @@ public class InventarioProductos {
         System.out.println("con que nombre desea remplazarlo? ");
         String nuevoNombre = sc.nextLine();
         ListaProductos.set(opcionEditar, nuevoNombre);
-       sc.nextLine();
+        sc.nextLine();
     }
     public static void eliminarProducto(){
      System.out.println("cual desea eliminar");
